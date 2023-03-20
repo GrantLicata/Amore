@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useLayoutEffect, useState } from "react";
 import { StyleSheet, View, KeyboardAvoidingView } from "react-native";
 import { StatusBar } from "expo-status-bar";
 import { Button, Input, Text } from "@rneui/themed";
@@ -8,6 +8,13 @@ const RegisterScreen = ({ navigation }) => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [imageUrl, setImageUrl] = useState("");
+
+  // Issue: The back button is not changing here.
+  useLayoutEffect(() => {
+    navigation.setOptions({
+      headerBackTitle: "ABC",
+    });
+  }, [navigation]);
 
   const register = () => {};
 
