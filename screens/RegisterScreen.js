@@ -10,12 +10,14 @@ const RegisterScreen = ({ navigation }) => {
   const [imageUrl, setImageUrl] = useState("");
 
   // Issue: The back button is not changing here.
+  // Updating the back button to a customized name when on the Register screen.
   useLayoutEffect(() => {
     navigation.setOptions({
-      headerBackTitle: "ABC",
+      headerBackTitle: "Back to Login",
     });
   }, [navigation]);
 
+  // Function to handle the registration upon button click.
   const register = () => {};
 
   return (
@@ -68,6 +70,7 @@ const RegisterScreen = ({ navigation }) => {
 
 export default RegisterScreen;
 
+// Styles prepared for the Register Screen.
 const styles = StyleSheet.create({
   container: {
     flex: 1,
